@@ -95,7 +95,7 @@ public class GoodsController {
     	List<GoodsVo> goodsList = goodsService.listGoodsVo();
     	model.addAttribute("goodsList", goodsList);
     	 return "goods_list";
-    }*/
+    }   */
     
     
     @RequestMapping(value="/to_detail/{goodsId}",produces="text/html")
