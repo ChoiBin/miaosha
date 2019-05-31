@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.choi.miaosha.domain.User;
+import com.choi.miaosha.rabbitmq.MQSender;
 import com.choi.miaosha.redis.RedisService;
 import com.choi.miaosha.redis.UserKey;
 import com.choi.miaosha.result.CodeMsg;
@@ -16,6 +17,9 @@ import com.choi.miaosha.service.UserService;
 @Controller
 @RequestMapping("/demo")
 public class DemoController {
+	
+	@Autowired
+	private MQSender mqSender;
 	
 	@Autowired
 	private UserService userService;
@@ -80,6 +84,11 @@ public class DemoController {
 		return Result.sucess(true);
 	}
 	
-	
+	@RequestMapping("/mq")
+	@ResponseBody
+	public Result<String> mq(){
+		mqSender.send("hello,world");
+		return Result.sucess("hello world");
+	}
 	
 }

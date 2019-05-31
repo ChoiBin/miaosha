@@ -1,3 +1,4 @@
+E:\workplace4\miaosha\src\main\java\com\choi\miaosha\redis\OrderKey.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\redis\KeyPrefix.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\service\UserService.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\vo\GoodsVo.java
@@ -13,14 +14,17 @@ E:\workplace4\miaosha\src\main\java\com\choi\miaosha\util\ValidatorUtil.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\dao\OrderDao.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\redis\UserKey.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\domain\OrderInfo.java
+E:\workplace4\miaosha\src\main\java\com\choi\miaosha\util\DBUtil.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\validator\IsMobile.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\exception\GlobalExceptionHandler.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\domain\MiaoshaOrder.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\result\CodeMsg.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\dao\UserDao.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\dao\MiaoShaUserDao.java
+E:\workplace4\miaosha\src\main\java\com\choi\miaosha\vo\GoodsDetailVo.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\controller\GoodsController.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\service\MiaoShaUserService.java
+E:\workplace4\miaosha\src\main\java\com\choi\miaosha\vo\OrderDetailVo.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\redis\GoodsKey.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\service\MiaoshaService.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\validator\IsMobileValidator.java
@@ -31,6 +35,8 @@ E:\workplace4\miaosha\src\main\java\com\choi\miaosha\controller\DemoController.j
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\MainApplication.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\util\UUIDUtil.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\service\OrderService.java
+E:\workplace4\miaosha\src\main\java\com\choi\miaosha\util\UserUtil.java
+E:\workplace4\miaosha\src\main\java\com\choi\miaosha\controller\OrderContoller.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\domain\MiaoshaGoods.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\domain\MiaoShaUser.java
 E:\workplace4\miaosha\src\main\java\com\choi\miaosha\controller\LoginController.java

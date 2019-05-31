@@ -5,11 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.choi.miaosha.domain.MiaoShaUser;
 import com.choi.miaosha.domain.MiaoshaOrder;
 import com.choi.miaosha.domain.OrderInfo;
 import com.choi.miaosha.result.CodeMsg;
+import com.choi.miaosha.result.Result;
 import com.choi.miaosha.service.GoodsService;
 import com.choi.miaosha.service.MiaoshaService;
 import com.choi.miaosha.service.OrderService;
@@ -29,6 +31,28 @@ public class MiaoshaController {
 	private MiaoshaService miaoshaService;
 
 	@RequestMapping("/do_miaosha")
+	@ResponseBody
+	public Result<OrderInfo> list(Model model, MiaoShaUser user,@RequestParam("goodsId") long goodsId){
+		model.addAttribute("user", user);
+		if(user == null){
+			return Result.error(CodeMsg.SESSION_ERROR);
+		}
+		//判断库存
+		GoodsVo goods = goodsService.getGoodVoByGoodsId(goodsId);
+		int stock = goods.getStockCount();
+		if(stock <= 0){
+			return Result.error(CodeMsg.MIAO_SHA_OVER);
+		}
+		//判断是否已经秒杀到了
+		MiaoshaOrder order = orderService.getMiaoshaOrderByUserIdGoodsId(user.getId(), goodsId);
+		if(order != null){
+			return Result.error(CodeMsg.REPEATE_MIAOSHA);
+		}
+		//减库存 下订单 写入秒杀订单
+		OrderInfo orderInfo = miaoshaService.miaosha(user, goods);
+		return Result.sucess(orderInfo);
+	}
+/*	@RequestMapping("/do_miaosha")
 	public String list(Model model, MiaoShaUser user,@RequestParam("goodsId") long goodsId){
 		model.addAttribute("user", user);
 		if(user == null){
@@ -53,4 +77,4 @@ public class MiaoshaController {
 		model.addAttribute("goods", goods);
 		return "order_detail";
 	}
-}
+*/}

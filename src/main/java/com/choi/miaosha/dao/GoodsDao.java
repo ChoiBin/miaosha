@@ -19,6 +19,6 @@ public interface GoodsDao {
 	@Select("select g.*,mg.stock_count,mg.start_date,mg.end_date,mg.miaosha_price from miaosha_goods mg left join goods g on mg.goods_id = g.id where g.id = #{goodsId}")
 	public GoodsVo getGoodVoByGoodsId(@Param("goodsId") long goodsId);
 	
-	@Update("update miaosha_goods set stock_count = stock_count - 1 where goods_Id = #{goodsId}")
+	@Update("update miaosha_goods set stock_count = stock_count - 1 where goods_Id = #{goodsId} and stock_count > 0")
 	public int reduceStock(MiaoshaGoods g);
 }
