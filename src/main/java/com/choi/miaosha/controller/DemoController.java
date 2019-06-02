@@ -26,6 +26,27 @@ public class DemoController {
 	
 	@Autowired
 	private RedisService redisService;
+	
+//	@RequestMapping("/mq/fanout")
+//	@ResponseBody
+//	public Result<String> fanout(){
+//		mqSender.sendFanout("hello choibin");
+//		return Result.sucess("hello world");
+//	}
+//	@RequestMapping("/mq/topic")
+//	@ResponseBody
+//	public Result<String> topic(){
+//		mqSender.sendTopic("hello choibin");
+//		return Result.sucess("hello world");
+//	}
+//	
+//	@RequestMapping("/mq/header")
+//	@ResponseBody
+//	public Result<String> header(){
+//		mqSender.sendHeader("hello choibin");
+//		return Result.sucess("hello world");
+//	}
+//	
 
 	@RequestMapping("/")
 	@ResponseBody
@@ -83,12 +104,12 @@ public class DemoController {
 		redisService.set(UserKey.getById, ""+1, user);
 		return Result.sucess(true);
 	}
-	
-	@RequestMapping("/mq")
-	@ResponseBody
-	public Result<String> mq(){
-		mqSender.send("hello,world");
-		return Result.sucess("hello world");
-	}
-	
+//	
+//	@RequestMapping("/mq")
+//	@ResponseBody
+//	public Result<String> mq(){
+//		mqSender.send("hello,world");
+//		return Result.sucess("hello world");
+//	}
+//	
 }

@@ -1,12 +1,10 @@
 package com.choi.miaosha.redis;
 
-import org.apache.catalina.startup.Tomcat.ExistingStandardWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.alibaba.fastjson.JSON;
 
-import groovy.lang.IncorrectClosureArgumentsException;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
@@ -71,7 +69,7 @@ public class RedisService {
 	 * 判断key是否存在
 	 * @return
 	 */
-	public <T> boolean ExistingStandardWrapper(KeyPrefix prefix, String key){
+	public <T> boolean exists(KeyPrefix prefix, String key){
 		Jedis jedis = null;
 		try{
 			jedis = jedisPool.getResource();
