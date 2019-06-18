@@ -133,7 +133,7 @@ public class MiaoshaController implements InitializingBean{
 	 * 0 排队中
 	 * -1 秒杀失败
 	 */
-	@RequestMapping(value="/miaosha/result" , method=RequestMethod.GET)
+	@RequestMapping(value="/result" , method=RequestMethod.GET)
 	@ResponseBody
 	public Result<Long> miaoshaResult(Model model, MiaoShaUser user, 
 			@RequestParam("goodsId") long goodsId){
@@ -142,6 +142,7 @@ public class MiaoshaController implements InitializingBean{
 		}
 		model.addAttribute("user", user);
 		long result = miaoshaService.getMiaoshaResult(user.getId(),goodsId);
+		System.out.println(result);
 		return Result.sucess(result);
 	}
 

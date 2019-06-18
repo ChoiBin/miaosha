@@ -98,8 +98,7 @@ public class GoodsController {
     	model.addAttribute("goodsList", goodsList);
     	 return "goods_list";
     }   */
-    
-    
+       
     @RequestMapping(value="/to_detail/{goodsId}",produces="text/html")
     @ResponseBody
     public String detail2(HttpServletRequest request,HttpServletResponse response,Model model, MiaoShaUser user,@PathVariable("goodsId")long goodsId){
@@ -141,7 +140,7 @@ public class GoodsController {
     	//手动渲染
     	html = thymeleafViewResolver.getTemplateEngine().process("goods_detail", ctx);
     	if(!StringUtils.isEmpty(html)){
-    		redisService.set(GoodsKey.getGoodsList, "" + goodsId, html);
+    		redisService.set(GoodsKey.getGoodsDetail, "" + goodsId, html);
     	}
     	return html;
     }
